@@ -1,5 +1,6 @@
 package sample;
 
+import org.testng.AssertJUnit;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
@@ -9,14 +10,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 public class AppiumInstalledAppTest {
 
 	static WebDriver driver;
-	
+
 	@BeforeClass
 	public void setUp() throws MalformedURLException {
 		DesiredCapabilities dc = new DesiredCapabilities();
@@ -55,7 +55,7 @@ public class AppiumInstalledAppTest {
 	public void dynamicSumTotal() throws InterruptedException {
 		int finalResult = getSumTotal(9, 8);
 		System.out.println("Result is : " + finalResult);
-		Assert.assertEquals(finalResult, 17);
+		AssertJUnit.assertEquals(finalResult, 17);
 		getSumTotal(1, 2, 3, 5, 6);
 	}
 	
